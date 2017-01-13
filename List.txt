@@ -59,6 +59,13 @@ Warrior Specific Behaviors:
 Power Attack
 Block
 
+General Item Attributes:
+
+Wearable
+Usable
+
+
+
 Weapons:
 
 1H Sword

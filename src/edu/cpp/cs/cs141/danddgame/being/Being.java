@@ -209,7 +209,6 @@ public abstract class Being {
 	}
 	
 	
-	
 	/**
 	 * Gets the being's current level
 	 * 
