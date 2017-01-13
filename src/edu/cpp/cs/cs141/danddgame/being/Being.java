@@ -11,6 +11,8 @@
 
 package edu.cpp.cs.cs141.danddgame.being;
 
+import edu.cpp.cs.cs141.danddgame.being.enemies.GeneralEnemy;
+
 public abstract class Being {
 
 	/**
@@ -118,9 +120,10 @@ public abstract class Being {
 	/**
 	 * This method will attack whatever is directly in front of the {@link Being}.
 	 * 
+	 * @return The amount of damage to inflict
 	 */
-	public void attack(){
-		
+	public int attack(GeneralEnemy target){
+		return 0;
 	}
 	
 	/**
@@ -133,10 +136,12 @@ public abstract class Being {
 	}
 	
 	/**
-	 * Adds a set amount of health to the being's total, and increases the starting amount too. Useful so two calls
+	 * Adds a set amount of health to the {@link Being} total, and increases the starting amount too. Useful so two calls
 	 * aren't required to increase both total health and current health.
 	 * 
-	 * @param add the amount of health to add to the being's base health
+	 * @param add the amount of health to add to the {@link Being} base health
+	 * @see #addHealthCurrent(int)
+	 * @see #addHealthTotal(int)
 	 */
 	public void addBaseHealth(int add){
 		addHealthTotal(add);
