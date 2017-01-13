@@ -20,7 +20,7 @@ public class Wolf extends GeneralEnemy {
 	 */
 	public Wolf() {
 		super("Wolf", EXPERIENCE);
-		
+		addAccuracy(4);
 	}
 	
 	/**

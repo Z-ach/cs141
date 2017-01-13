@@ -57,6 +57,11 @@ public abstract class Being {
 	 * How much <code>defense</code> the being has. This effects how much damage the being takes.
 	 */
 	private int defense;
+	
+	/**
+	 * The being's base attack power. Other stats will effect this.
+	 */
+	private int attackPower;
 
 	
 	/**
@@ -109,6 +114,17 @@ public abstract class Being {
 	}
 	
 	/**
+	 * Adds a set amount of health to the being's total, and increases the starting amount too. Useful so two calls
+	 * aren't required to increase both total health and current health.
+	 * 
+	 * @param add the amount of health to add to the being's base health
+	 */
+	public void addBaseHealth(int add){
+		addHealthTotal(add);
+		addHealthCurrent(add);
+	}
+	
+	/**
 	 * adds a set amount of health to the being's total health
 	 * 
 	 * @param add the amount of health to add
@@ -116,6 +132,7 @@ public abstract class Being {
 	public void addHealthTotal(int add){
 		healthTotal += add;
 	}
+	
 	
 	/**
 	 * Gets the being's total health
@@ -144,8 +161,22 @@ public abstract class Being {
 		return healthCurrent;
 	}
 	
+	/**
+	 * Adds a set amount of mana to the being's total, and increases the starting amount too. Useful so two calls
+	 * aren't required to increase both total mana and current mana.
+	 * 
+	 * @param add the amount of mana to add to the being's base mana
+	 */
+	public void addBaseMana(int add){
+		addManaTotal(add);
+		addManaCurrent(add);
+	}
 	
-	
+	/**
+	 * adds a set amount of mana to the being's total mana
+	 * 
+	 * @param add the amount of mana to add
+	 */
 	public void addManaTotal(int add){
 		manaTotal += add;
 	}
@@ -240,6 +271,24 @@ public abstract class Being {
 	 */
 	public int getDefense(){
 		return defense;
+	}
+	
+	/**
+	 * Adds to the being's current attack power
+	 * 
+	 * @param add the amount of attack power to add
+	 */
+	public void addAttackPower(int add){
+		attackPower += add;
+	}
+	
+	/**
+	 * Gets the being's current attack power.
+	 * 
+	 * @return the being's current attack power.
+	 */
+	public int getAttackPower(){
+		return attackPower;
 	}
 
 }
