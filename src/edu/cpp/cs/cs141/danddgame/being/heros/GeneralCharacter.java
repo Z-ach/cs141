@@ -9,7 +9,7 @@ import edu.cpp.cs.cs141.danddgame.being.Being;
  * @author Zach Kaufman
  *
  */
-public class GeneralCharacter extends Being{
+public abstract class GeneralCharacter extends Being{
 	
 
 	/**
