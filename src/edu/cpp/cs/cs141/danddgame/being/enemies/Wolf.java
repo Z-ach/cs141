@@ -15,10 +15,18 @@ public class Wolf extends GeneralEnemy {
 	private final static int EXPERIENCE = 5;
 	
 	/**
+	 * Wolf constructor. Makes a call to GeneralEnemy which calls Being, and assigns it a name.
 	 * 
 	 */
 	public Wolf() {
 		super("Wolf", EXPERIENCE);
+		
+	}
+	
+	/**
+	 * Attacks the character for a set amount of damage.
+	 */
+	public void bite(){
 		
 	}
 	
