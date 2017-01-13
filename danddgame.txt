@@ -1,0 +1,17 @@
+homework 1
+
+create and design architecture for dnd video game
+
+contain
+
+list of entities in game
+   ex. all classes in game
+for each one, a list of attributes
+for each one, a list of behaviors
+create a software project in IDE, pacakge edu.cpp.cs.cs141.danddgame
+create class for every one of objects in list
+add code for each field with types and methods (empty) for each behavior
+make return types and params suitable
+make java doc comments
+
+turn in on blackboard on monday by 11:59pm

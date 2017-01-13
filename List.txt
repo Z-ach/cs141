@@ -1,0 +1,123 @@
+Characters:
+
+Mage
+Archer
+Assassin
+Warrior
+
+General Character Attributes:
+
+Name
+Health Points (hp)
+Mana Points (mp)
+Level
+Experience
+Gender
+Strength
+Luck
+Dexterity
+Intelligence
+Avoid
+Defense
+Reputation
+Carry Capacity
+Gold
+
+General Character Behaviors:
+
+Walk
+Sprint
+Attack
+Consume
+Level up
+Sleep
+Buy
+Sell
+Drop
+Equip
+Take Damage
+Gain Reputation
+Lose Reputation
+
+Mage Specific Behaviors: 
+
+Cast Fireball
+Heal
+
+Archer Specific Behaviors: 
+
+Shoot Arrow
+Reload Quiver
+
+Assassin Specific Behaviors: 
+
+Throw Item
+Sneak
+
+Warrior Specific Behaviors: 
+
+Power Attack
+Block
+
+Weapons:
+
+1H Sword
+2H Sword
+Axe
+Mace
+Staff
+Wand
+Bow
+Throwing Knife
+Throwing Star
+Dagger
+
+Armor:
+
+Shield
+Helmet
+Top
+Bottom
+Shoes
+Shoulder
+Cape
+Gloves
+
+General Equip Attributes:
+
+Price
+Defense
+Avoid
+Attack
+Weight
+
+Items:
+
+Health Potion
+Mana Potion
+Strength Potion
+Intelligence Potion
+Luck Potion
+Dexterity Potion
+Attack Potion
+Defense Potion
+
+Enemies:
+
+Wolf
+Orc
+Witch
+
+General Enemy Attributes:
+
+Health
+Mana
+Attack Power
+Defense
+Avoid
+Experience
+
+General Enemy Behaviors
+
+Walk
+Attack 
