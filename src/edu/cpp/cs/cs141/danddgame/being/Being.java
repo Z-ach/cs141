@@ -14,62 +14,76 @@ package edu.cpp.cs.cs141.danddgame.being;
 public abstract class Being {
 
 	/**
-	 * Current health of being. Health goes down when attacked.
+	 * This field represents the current health of a {@link Being}. Initially {@code 0},
+	 * can only be changed by the methods {@link #addHealthCurrent(int)} or {@link #takeDamage(int)}.
+	 * If this value reaches 0, the {@link Being} will die.
 	 */
 	private int healthCurrent;
 	
 	
 	/**
-	 * Total health of being.
-	 * 
-	 * Based on <code>strength</code> and <code>level</code> of being.
+	 * This field represents the total health of a {@link Being}. Initially {@code 0},
+	 * can only be changed by the method {@link #addHealthCurrent(int)}.
 	 */
 	private int healthTotal;
 	
 	
 	/**
-	 * Current mana of being. Mana will go down with use of skills and attacks.
+	 * This field represents the current mana of a {@link Being}. Initially {@code 0},
+	 * can only be changed by the methods {@link #addManaCurrent(int)}.
+	 * If this value reaches 0, the {@link Being} will no longer be able to use skills.
 	 */
 	private int manaCurrent;
 	
 	
 	/**
-	 * Total mana of being. Mana is based on <code>intelligence</code> and <code>level</code> of being.
+	 * This field represents the total mana of a {@link Being}. Initially {@code 0},
+	 * can only be changed by the method {@link #addManaTotal(int)}.
 	 */
 	private int manaTotal;
 	
 	
 	/**
-	 * Current level of being. Level is required to equip certain items and use certain skills.
+	 * The level of the {@link Being}. Initially {@code 1}, can only be changed by methods that inherit this class.
+	 * 
+	 * @see edu.cpp.cs.cs141.danddgame.being.heros.GeneralCharacter#levelUp()
 	 */
-	
 	private int level;
 	
 	/**
-	 * How much <code>avoid</code> the being has. This effects how often the being is hit by other beings.
+	 * This field represents the avoidability of the {@link Being}. Initially {@code 0}, can only be changed by
+	 * the method {@link #addAvoid(int)}. This effects how often the being is hit by another {@link Being}.
 	 */
 	private int avoid;
 	
 	
 	/**
-	 * How much <code>accuracy</code> the being has. This effects how often the being hits other beings.
+	 * This field represents the accuracy of the {@link Being}. Initially {@code 0}, can only be changed by
+	 * the method {@link #addAccuracy(int)}. This effects how often the {@link Being} can hit another {@link Being}.
+	 * 
+	 * @see #attack()
 	 */
 	private int accuracy;
 	
 	
 	/**
-	 * How much <code>defense</code> the being has. This effects how much damage the being takes.
+	 * This field represents the defense of the {@link Being}. Initially {@code 0}, can only be changed by
+	 * the method {@link #addDefense(int)}. This effects how much damage the {@link Being} will take.
+	 * 
+	 * @see #takeDamage(int)
 	 */
 	private int defense;
 	
 	/**
-	 * The being's base attack power. Other stats will effect this.
+	 * This field represents the attack power of the {@link Being}. Initially {@code 0}, can only be changed by
+	 * the method {@link #addAttackPower(int)}. This effects how much damage the {@link Being} will deal.
 	 */
 	private int attackPower;
 
 	
 	/**
-	 * The name of the being.
+	 * This field represents the name of a {@link Being}. Initially set to the {@code String} value required by
+	 * the constructor {@link #Being(String)}. The name cannot be changed once set.
 	 */
 	private String name;
 	
@@ -87,12 +101,13 @@ public abstract class Being {
 		defense = 0;
 		avoid = 0;
 		accuracy = 0;
+		attackPower = 0;
 	}
 	
 	
 	
 	/**
-	 * Makes the being move via walking in a specified direction.
+	 * This method moves the {@link Being} in a specified {@code direction}.
 	 * 
 	 * @param direction 0 for reverse, 1 for forward, 2 for left, 3 for right
 	 */
@@ -101,7 +116,7 @@ public abstract class Being {
 	}
 	
 	/**
-	 * Attacks whatever is directly in front of the being. Only a basic attack, will not do much damage.
+	 * This method will attack whatever is directly in front of the {@link Being}.
 	 * 
 	 */
 	public void attack(){
