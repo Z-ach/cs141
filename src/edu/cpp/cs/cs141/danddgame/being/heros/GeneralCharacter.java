@@ -16,76 +16,90 @@ public abstract class GeneralCharacter extends Being{
 	
 
 	/**
-	 * Current exp of character. Resets to 0 when it equals the experience needed to level up, which triggers <code>levelUp()</code>.
+	 * This field represents the current exp of the {@link GeneralCharacter}. Initially set to {@code 0}, will increase by calling
+	 * {@link #addExp(int)} as enemies are killed by the {@link GeneralCharacter}. Resets to {@code 0} when it equals the experience 
+	 * needed to level up, which will trigger {@link #levelUp()}.
+	 * 
+	 * @see #levelUp()
+	 * @see #addExp(int)
 	 */
 	private int expCurrent;
 	
 	
 	/**
-	 * Current level of being. Level is required to equip certain items and use certain skills.
+	 * This field represents the current level of the {@link GeneralCharacter}. Initially set to {@code 1}. Will increase by {@code 1} 
+	 * every time the {@link #levelUp()} method is called. Level is required to equip certain items and use certain skills.
 	 */
-	
 	private int level;
 	
 	
 	/**
-	 * Total exp required to next <code>level</code>.
+	 * This field is an array that stores the total exp needed to level up. Once the {@code expCurrent} is equal to the specific array value
+	 * that corresponds to the {@link GeneralCharacter}'s level, {@link #levelUp()} will be called.
 	 */
 	private final static int[] EXP_TOTAL = {150, 250, 350, 450, 600, 800, 1050, 1350, 1700, 2100};
 	
 	
 	/**
-	 * How much <code>strength</code> the character has. This effects <code>carryCap</code> and <code>healthTotal</code> for all characters,
-	 *  and <code>attackPower</code> for warriors.
+	 * This field represents the {@code strength} of the {@link GeneralCharacter}. Initially will be set to {@code 5}, can be increased by
+	 * {@link #addStrength(int)}. Will be used as the primary stat for the {@link edu.cpp.cs.cs141.danddgame.being.heros.Warrior} hero.
 	 */
 	private int strength;
 	
 	
 	/**
-	 * How much <code>luck</code> the character has. This effects <code>avoid</code> for all characters, and <code>attackPower</code> for assassins.
+	 * This field represents the {@code luck} of the {@link GeneralCharacter}. Initially will be set to {@code 5}, can be increased by
+	 * {@link #addLuck(int)}.
 	 */
 	private int luck;
 	
 	
 	/**
-	 * How much <code>dexterity</code> the character has. This effects <code>accuracy</code> for all characters, and <code>attackPower</code> for archers.
+	 * This field represents the {@code dexterity} of the {@link GeneralCharacter}. Initially will be set to {@code 5}, can be increased by
+	 * {@link #addDexterity(int)}. Will be used as the primary stat for the {@link edu.cpp.cs.cs141.danddgame.being.heros.Archer} hero.
 	 */
 	private int dexterity;
 	
 	
 	/**
-	 * How much <code>intelligence</code> the character has. This effects <code>manaTotal</code> for all characters, and <code>attackPower</code> for mages.
+	 * This field represents the {@code intelligence} of the {@link GeneralCharacter}. Initially will be set to {@code 5}, can be increased by
+	 * {@link #addIntelligence(int)}. Will be used as the primary stat for the {@link edu.cpp.cs.cs141.danddgame.being.heros.Mage} hero.
 	 */
 	private int intelligence;
 	
 	
 	/**
-	 * How much <code>reputation</code> the character has. This effects availability of certain quests.
+	 * This field represents the {@code reputation} of the {@link GeneralCharacter}. Initially will be set to {@code 10}, can be changed by
+	 * {@link #changeReputation(int)}. Will be used in the future to decide what quests will be available.
 	 */
 	private int reputation;
 	
 	
 	/**
-	 * How much the character has can hold. This is effected by <code>strength</code> and character <code>level</code>.
+	 * This field represents the total weight of items the {@link GeneralCharacter} can hold.
 	 */
 	private int carryCap;
 	
 	
 	/**
-	 * How much currency the character has.
+	 * This field represents the {@link GeneralCharacter}'s amount of gold. Can be changed by {@link #changeGold(int)}. Used to
+	 * {@link #buy(int, int, int)} and {@link #sell(int, int, int)}.
 	 */
 	private int gold;
 	
 	
 	/**
-	 * The gender of the character.
+	 * The gender of the {@link GeneralCharacter}. Will be used later on to decide what items the {@link GeneralCharacter} can
+	 * {@link #equip(int)}. This value is set in the constructor by the required arguments of {@link #GeneralCharacter(String, String)}.
+	 * Once it is set, it cannot be changed.
 	 */
 	private String gender;
 
 
 	/**
-	 * Constructor for <code>GeneralCharacter()</code>. Assigns a <code>name</code> and a <code>gender</code> to the character, and initializes
-	 * all basic starting stats and attributes to their respective starting values.
+	 * Constructor for {@link GeneralCharacter}. Assigns a {@code name} and a {@code gender} to the {@link GeneralCharacter} and initializes
+	 * all basic starting stats and attributes to their respective starting values. {@link GeneralCharacter} is a subclass of {@link Being},
+	 * and inherets methods from that superclass.
 	 * 
 	 * @param name Name of the character.
 	 * @param gender Gender of the character.
@@ -140,10 +154,21 @@ public abstract class GeneralCharacter extends Being{
 		
 	}
 	
-
 	
 	/**
-	 * Consumes an item.
+	 * This method adds a set amount of experience to a {@link GeneralCharacter}. This will happen when an 
+	 * {@link edu.cpp.cs.cs141.danddgame.being.enemies.GeneralEnemy} is killed.
+	 * 
+	 * @param add the amount of experience to add to the {@link GeneralCharacter}.
+	 * @see #levelUp()
+	 */
+	public void addExp(int add){
+		expCurrent += add;
+	}
+	
+	/**
+	 * This method consumes an item in the {@link GeneralCharacter}'s inventory. The item will then be removed from the
+	 * inventory.
 	 * 
 	 * @param itemID the ID of the item being consumed
 	 */
@@ -153,7 +178,7 @@ public abstract class GeneralCharacter extends Being{
 	
 	
 	/**
-	 * Increases the character's <code>level</code> and resets the <code>expCurrent</code> back to 0.
+	 * This method increases the {@link GeneralCharacter}'s {@code level} and resets the {@code expCurrent} back to {@code 0}.
 	 */
 	public void levelUp(){
 		level++;
@@ -162,7 +187,7 @@ public abstract class GeneralCharacter extends Being{
 	}
 	
 	/**
-	 * Recovers a percentage of <code>healthTotal</code> per hour sleeping.
+	 * This method will recover a percentage of the {@link GeneralCharacter}'s health per hour sleeping.
 	 * 
 	 * @param duration How long the character will sleep for.
 	 */
@@ -171,7 +196,7 @@ public abstract class GeneralCharacter extends Being{
 	}
 	
 	/**
-	 * Buys an item from a vendor and subtracts the amount of gold the item costs.
+	 * This method buys an item from a vendor and subtracts the amount of gold the item costs.
 	 * 
 	 * @param itemID the ID of the item being purchased
 	 * @param cost the price in gold of the item being purchased
@@ -182,7 +207,7 @@ public abstract class GeneralCharacter extends Being{
 	}
 	
 	/**
-	 * Sells an item to a buyer and adds the amount of gold the item costs.
+	 * This method sells an item to a buyer and adds the amount of gold the item costs.
 	 * 
 	 * @param itemID the ID of the item being sold
 	 * @param cost the price in gold of the item being sold
@@ -193,7 +218,7 @@ public abstract class GeneralCharacter extends Being{
 	}
 	
 	/**
-	 * Buys an item from a vendor and subtracts the amount of gold the item costs.
+	 * This method removes an item from the {@link GeneralCharacter}'s inventory.
 	 * 
 	 * @param itemID the ID of the item being dropped
 	 * @param quantity the number of items being dropped
@@ -204,7 +229,7 @@ public abstract class GeneralCharacter extends Being{
 	
 	
 	/**
-	 * Equips an item from the character's inventory.
+	 * This method equips an item from the {@link GeneralCharacter}'s inventory.
 	 * 
 	 * @param equipID the ID of the item being equipped.
 	 */
@@ -213,90 +238,90 @@ public abstract class GeneralCharacter extends Being{
 	}
 	
 	/**
-	 * Changes the character's <code>reputation</code> by a set amount
+	 * Changes the {@link GeneralCharacter}'s {@code reputation} by a set amount.
 	 * 
-	 * @param amount how much <code>reputation</code> the character loses or gains
+	 * @param amount how much {@code reputation} the {@link GeneralCharacter} loses or gains.
 	 */
 	public void changeReputation(int amount){
 		reputation += amount;
 	}
 	
 	/**
-	 * Gets the character's current <code>reputation</code>
+	 * Gets the {@link GeneralCharacter}'s current {@code reputation}
 	 * 
-	 * @return the character's <code>reputation</code>
+	 * @return the {@link GeneralCharacter}'s {@code reputation}
 	 */
 	public int getReputation(){
 		return reputation;
 	}
 	
 	/**
-	 * Adds a specified amount of stat points to the character's <code>strength</code> stat
+	 * Adds a specified amount of stat points to the {@link GeneralCharacter}'s {@code strength} stat
 	 * 
-	 * @param add The number of stat points to add to <code>strength</code>
+	 * @param add The number of stat points to add to {@code strength}
 	 */
 	public void addStrength(int add){
 		strength += add;
 	}
 	
 	/**
-	 * Gets the current <code>strength</code> of the character.
+	 * Gets the current {@code strength} of the {@link GeneralCharacter}.
 	 * 
-	 * @return the <code>strength</code> of the character.
+	 * @return the {@code strength} of the {@link GeneralCharacter}.
 	 */
 	public int getStrength(){
 		return strength;
 	}
 	
 	/**
-	 * Adds a specified amount of stat points to the character's <code>dexterity</code> stat
+	 * Adds a specified amount of stat points to the {@link GeneralCharacter}'s {@code dexterity} stat
 	 * 
-	 * @param add The number of stat points to add to <code>dexterity</code>
+	 * @param add The number of stat points to add to {@code dexterity}
 	 */
 	public void addDexterity(int add){
 		dexterity += add;
 	}
 	
 	/**
-	 * Gets the current <code>dexterity</code> of the character.
+	 * Gets the current {@code dexterity} of the {@link GeneralCharacter}.
 	 * 
-	 * @return the <code>dexterity</code> of the character.
+	 * @return the {@code dexterity} of the {@link GeneralCharacter}.
 	 */
 	public int getDexterity(){
 		return dexterity;
 	}
 	
 	/**
-	 * Adds a specified amount of stat points to the character's <code>luck</code> stat
+	 * Adds a specified amount of stat points to the {@link GeneralCharacter}'s {@code luck} stat
 	 * 
-	 * @param add The number of stat points to add to <code>luck</code>
+	 * @param add The number of stat points to add to {@code luck}
 	 */
 	public void addLuck(int add){
 		luck += add;
 	}
 	
 	/**
-	 * Gets the current <code>luck</code> of the character.
+	 * Gets the current {@code luck} of the {@link GeneralCharacter}.
 	 * 
-	 * @return the <code>luck</code> of the character.
+	 * @return the {@code luck} of the {@link GeneralCharacter}.
 	 */
 	public int getLuck(){
 		return luck;
 	}
 	
 	/**
-	 * Adds a specified amount of stat points to the character's <code>intelligence</code> stat
+	 * Adds a specified amount of stat points to the {@link GeneralCharacter}'s {@code intelligence} stat
 	 * 
-	 * @param add The number of stat points to add to <code>intelligence</code>
+	 * @param add The number of stat points to add to {@code intelligence}
 	 */
 	public void addIntelligence(int add){
 		intelligence += add;
 	}
 	
 	/**
-	 * Gets the current <code>intelligence</code> of the character.
+	 * Gets the current {@code intelligence} of the {@link GeneralCharacter}.
 	 * 
-	 * @return the <code>intelligence</code> of the character.
+	 * @return the {@code intelligence} of the {@link GeneralCharacter}.
 	 */
 	public int getIntelligence(){
 		return intelligence;
@@ -304,18 +329,18 @@ public abstract class GeneralCharacter extends Being{
 	
 	
 	/**
-	 * Gets the current gold amount the character has.
+	 * Gets the current {@code gold} amount the {@link GeneralCharacter} has.
 	 * 
-	 * @return the amount of gold the character has.
+	 * @return the amount of {@code gold} the {@link GeneralCharacter} has.
 	 */
 	public int getGold(){
 		return gold;
 	}
 	
 	/**
-	 * Adds or removes gold to/from the character
+	 * Adds or removes {@code gold} to/from the {@link GeneralCharacter}
 	 * 
-	 * @param amount of gold to add/remove from the character
+	 * @param amount of {@code gold} to add/remove from the {@link GeneralCharacter}
 	 */
 	public void changeGold(int amount){
 		gold += amount;
