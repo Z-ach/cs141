@@ -118,28 +118,33 @@ public abstract class Being {
 	}
 	
 	/**
-	 * This method will attack whatever is directly in front of the {@link Being}.
+	 * This method will attack the {@code target} for an amount which will be returned
+	 * by this method. 
 	 * 
-	 * @return The amount of damage to inflict
+	 * @param target The enemy that will be attacked
+	 * @return The amount of damage to inflict on the target
+	 * @see edu.cpp.cs.cs141.danddgame.being.enemies.GeneralEnemy
 	 */
 	public int attack(GeneralEnemy target){
 		return 0;
 	}
 	
 	/**
-	 * Reduces the <code>healthCurrent</code> of the being by a certain amount.
+	 * This method will reduce the amount of health of the {@link Being}. Will be used when
+	 * {@link Being} is attacked.
 	 * 
 	 * @param damage How much damage to subtract from being's current health.
+	 * @see #attack(GeneralEnemy)
 	 */
 	public void takeDamage(int damage){
 		
 	}
 	
 	/**
-	 * Adds a set amount of health to the {@link Being} total, and increases the starting amount too. Useful so two calls
-	 * aren't required to increase both total health and current health.
+	 * This method adds a set amount of health to the {@link Being}'s total, and increases the starting amount too.
+	 * Useful so two calls aren't required to increase both total health and current health.
 	 * 
-	 * @param add the amount of health to add to the {@link Being} base health
+	 * @param add the amount of health to add to the {@link Being} base health.
 	 * @see #addHealthCurrent(int)
 	 * @see #addHealthTotal(int)
 	 */
@@ -149,9 +154,9 @@ public abstract class Being {
 	}
 	
 	/**
-	 * adds a set amount of health to the being's total health
+	 * This method adds a set amount of health to the {@link Being}'s total health.
 	 * 
-	 * @param add the amount of health to add
+	 * @param add the amount of health to add the {@link Being}'s total health.
 	 */
 	public void addHealthTotal(int add){
 		healthTotal += add;
@@ -159,37 +164,39 @@ public abstract class Being {
 	
 	
 	/**
-	 * Gets the being's total health
+	 * This method will return the {@link Being}'s total health.
 	 * 
-	 * @return being's total health
+	 * @return the {@link Being}'s total health.
 	 */
 	public int getHealthTotal(){
 		return healthTotal;
 	}
 	
 	/**
-	 * heals the being
+	 * This method will heal the {@link Being} for a set amount.
 	 * 
-	 * @param add the amount of health to recover
+	 * @param add the amount of health the {@link Being} will recover.
 	 */
 	public void addHealthCurrent(int add){
 		healthCurrent += add;
 	}
 	
 	/**
-	 * Gets the being's current health
+	 * This method will return the current health of the {@link Being}.
 	 * 
-	 * @return being's current health
+	 * @return the current amount of health of the {@link Being}
 	 */
 	public int getHealthCurrent(){
 		return healthCurrent;
 	}
 	
 	/**
-	 * Adds a set amount of mana to the being's total, and increases the starting amount too. Useful so two calls
+	 * Adds a set amount of mana to the {@link Being}'s total, and increases the starting amount too. Useful so two calls
 	 * aren't required to increase both total mana and current mana.
 	 * 
-	 * @param add the amount of mana to add to the being's base mana
+	 * @param add the amount of mana to add to the {@link Being}'s base mana
+	 * @see #addManaCurrent(int)
+	 * @see #addManaTotal(int)
 	 */
 	public void addBaseMana(int add){
 		addManaTotal(add);
@@ -197,36 +204,36 @@ public abstract class Being {
 	}
 	
 	/**
-	 * adds a set amount of mana to the being's total mana
+	 * This method adds a set amount of mana to the {@link Being}'s total mana.
 	 * 
-	 * @param add the amount of mana to add
+	 * @param add the amount of mana to add the {@link Being}'s total mana.
 	 */
 	public void addManaTotal(int add){
 		manaTotal += add;
 	}
 	
 	/**
-	 * Gets the being's total mana
+	 * This method will return the {@link Being}'s total mana.
 	 * 
-	 * @return being's total mana
+	 * @return the {@link Being}'s total mana.
 	 */
 	public int getManaTotal(){
 		return manaTotal;
 	}
 	
 	/**
-	 * recovers mana
+	 * This method will increase the current mana amount of the {@link Being}.
 	 * 
-	 * @param add the amount of mana to recover
+	 * @param add the amount of mana the {@link Being} will recover.
 	 */
 	public void addManaCurrent(int add){
 		manaCurrent += add;
 	}
 	
 	/**
-	 * Gets the being's current mana
+	 * This method will return the current mana of the {@link Being}.
 	 * 
-	 * @return being's current mana
+	 * @return the current amount of mana of the {@link Being}
 	 */
 	public int getManaCurrent(){
 		return manaCurrent;
@@ -234,81 +241,81 @@ public abstract class Being {
 	
 	
 	/**
-	 * Gets the being's current level
+	 * This method will get the {@link Being}'s current level
 	 * 
-	 * @return the being's current level
+	 * @return the {@link Being}'s current level
 	 */
 	public int getLevel(){
 		return level;
 	}
 	
 	/**
-	 * Adds to the being's <code>avoid</code> stat
+	 * This method adds to the {@link Being}'s current {@code avoid} stat
 	 * 
-	 * @param add the amount of <code>avoid</code> to add
+	 * @param add the amount of {@code avoid} to add
 	 */
 	public void addAvoid(int add){
 		avoid += add;
 	}
 	
 	/**
-	 * Gets the being's current <code>avoid</code>.
+	 * This method gets the {@link Being}'s current {@code avoid}.
 	 * 
-	 * @return being's <code>avoid</code>
+	 * @return the {@link Being}'s current {@code avoid}.
 	 */
 	public int getAvoid(){
 		return avoid;
 	}
 	
 	/**
-	 * Adds to the being's <code>accuracy</code> stat
+	 * This method adds to the {@link Being}'s current {@code accuracy} stat
 	 * 
-	 * @param add the amount of <code>accuracy</code> to add
+	 * @param add the amount of {@code accuracy} to add
 	 */
 	public void addAccuracy(int add){
 		accuracy += add;
 	}
 	
 	/**
-	 * Gets the being's current <code>accuracy</code>.
+	 * This method gets the {@link Being}'s current {@code accuracy}.
 	 * 
-	 * @return being's <code>accuracy</code>
+	 * @return the {@link Being}'s current {@code accuracy}.
 	 */
 	public int getAccuracy(){
 		return accuracy;
 	}
 	
 	/**
-	 * Adds to the being's <code>defense</code> stat
+	 * This method adds to the {@link Being}'s current {@code defense} stat
 	 * 
-	 * @param add the amount of <code>defense</code> to add
+	 * @param add the amount of {@code defense} to add
 	 */
 	public void addDefense(int add){
 		defense += add;
 	}
 	
 	/**
-	 * Gets the being's current <code>defense</code>.
+	 * This method gets the {@link Being}'s current {@code defense}.
 	 * 
-	 * @return being's <code>defense</code>
+	 * @return the {@link Being}'s current {@code defense}.
 	 */
 	public int getDefense(){
 		return defense;
 	}
 	
 	/**
-	 * Adds to the being's current attack power
+	 * This method adds to the {@link Being}'s current {@code attackPower} stat
 	 * 
-	 * @param add the amount of attack power to add
+	 * @param add the amount of {@code attackPower} to add
 	 */
 	public void addAttackPower(int add){
 		attackPower += add;
 	}
 	
 	/**
-	 * Gets the being's current attack power.
+	 * This method gets the {@link Being}'s current {@code attackPower}.
 	 * 
-	 * @return the being's current attack power.
+	 * @return the {@link Being}'s current {@code attackPower}.
 	 */
 	public int getAttackPower(){
 		return attackPower;
