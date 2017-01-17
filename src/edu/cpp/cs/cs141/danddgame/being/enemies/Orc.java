@@ -12,10 +12,6 @@ package edu.cpp.cs.cs141.danddgame.being.enemies;
 
 import edu.cpp.cs.cs141.danddgame.being.heros.GeneralCharacter;
 
-/**
- * @author Zach Kaufman
- *
- */
 public class Orc extends GeneralEnemy {
 
 	/**

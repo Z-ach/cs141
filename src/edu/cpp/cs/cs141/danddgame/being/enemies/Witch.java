@@ -10,27 +10,40 @@
  */
 package edu.cpp.cs.cs141.danddgame.being.enemies;
 
+import edu.cpp.cs.cs141.danddgame.being.heros.GeneralCharacter;
+
 public class Witch extends GeneralEnemy {
 
 	/**
-	 * How much experience a player gets from killing this enemy.
+	 * This field represents how much experience the {@link GeneralEnemy} contains. This value will be given to a
+	 * {@link edu.cpp.cs.cs141.danddgame.being.heros.GeneralCharacter} when this {@link GeneralEnemy} is killed.
+	 * 
+	 * @see #getExperience()
 	 */
 	private final static int EXPERIENCE = 5;
 	
 	/**
-	 * Witch constructor. Makes a call to GeneralEnemy which calls Being, and assigns it a name.
+	 * This is the constructor for the {@link Witch} enemy. {@link Witch} is a subclass of {@link GeneralEnemy}, so it
+	 * inherits everything within it. The {@link Witch} enemy is designed to have more avoid than other enemies,
+	 * so this constructor adds additional avoid.
 	 * 
+	 * @see edu.cpp.cs.cs141.danddgame.being.enemies.GeneralEnemy#GeneralEnemy(String, int)
 	 */
 	public Witch() {
 		super("Witch", EXPERIENCE);
 		addAvoid(4);
 	}
 
-	/**
-	 * Casts a spell on the character, deals a set amount of damage
-	 */
-	public void castSpell() {
 
+	/**
+	 * This method is the main attack for the {@link Witch}. Every time this method is called, it will deal some sort of
+	 * damage to its target.
+	 * 
+	 * @param target the recipient of the {@link Witch}'s attack.
+	 * @return the amount of damage to deal to the target
+	 */
+	public int castSpell(GeneralCharacter target) {
+		return 0;
 	}
 
 }
