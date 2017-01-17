@@ -94,6 +94,14 @@ public abstract class GeneralCharacter extends Being{
 	 * Once it is set, it cannot be changed.
 	 */
 	private String gender;
+	
+	
+	/**
+	 * The hero type of the {@link GeneralCharacter}. This value is initially set to the character's hero type by the constructor
+	 * of that specific hero. The current values this can hold are {@code Archer}, {@code Mage}, or {@code Warrior}. Once it is set,
+	 * it cannot be changed. It can be accessed using the {@link #getHeroType()} method. 
+	 */
+	private String heroType;
 
 
 	/**
@@ -104,9 +112,10 @@ public abstract class GeneralCharacter extends Being{
 	 * @param name Name of the character.
 	 * @param gender Gender of the character.
 	 */
-	protected GeneralCharacter(String name, String gender) {
+	protected GeneralCharacter(String name, String gender, String heroType) {
 		super(name);
 		this.gender = gender;
+		this.heroType = heroType;
 		
 		//all characters start at level 1 with 0 current exp
 		level = 1;
@@ -141,14 +150,35 @@ public abstract class GeneralCharacter extends Being{
 		carryCap = 10;
 	}
 	
-
+	
 	
 	/**
-	 * Makes the character move in a specified direction, faster than walking.
+	 * This method gets the hero type of the player. As of the current version, it can only return three values: {@code Archer},
+	 * {@code Mage}, or {@code Warrior}, as they are the only hero types currently available.
 	 * 
-	 * @param speed the speed at which the character travels. 1 is walking, 2 is running, 3 is sprinting
-	 * @param direction 0 for reverse, 1 for forward, 2 for left, 3 for right
-	 * @see walk
+	 * @return the hero type
+	 */
+	public String getHeroType(){
+		return heroType;
+	}
+	
+	
+	/**
+	 * This method 
+	 * 
+	 * @return
+	 */
+	public String getGender(){
+		return gender;
+	}
+	
+	
+	/**
+	 * Makes the character move in a specified direction, at a faster pace than walking.
+	 * 
+	 * @param speed the speed at which the character travels. {@code 1} for walking, {@code 2} for running, {@code 3} for sprinting
+	 * @param direction {@code 0} for reverse, {@code 1} for forward, {@code 2} for left, {@code 3} for right
+	 * @see #walk(int)
 	 */
 	public void sprint(int speed, int direction){
 		

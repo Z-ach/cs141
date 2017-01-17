@@ -20,7 +20,7 @@ public class Mage extends GeneralCharacter {
 	 * @param gender Gender of the character.
 	 */
 	public Mage(String name, String gender) {
-		super(name, gender);
+		super(name, gender, "Mage");
 		addIntelligence(10);
 	}
 	

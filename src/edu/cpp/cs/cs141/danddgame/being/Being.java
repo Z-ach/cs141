@@ -107,11 +107,20 @@ public abstract class Being {
 	}
 	
 	
+	/**
+	 * This method gets the name of the {@link Being}. The name is created through the constructor of a subclass,
+	 * which then makes a call to {@link Being}, where it is permanently set.
+	 * 
+	 * @return the name of the {@link Being}.
+	 */
+	public String getName(){
+		return name;
+	}
 	
 	/**
 	 * This method moves the {@link Being} in a specified {@code direction}.
 	 * 
-	 * @param direction 0 for reverse, 1 for forward, 2 for left, 3 for right
+	 * @param direction {@code 0} for reverse, {@code 1} for forward, {@code 2} for left, {@code 3} for right
 	 */
 	public void walk(int direction){
 		

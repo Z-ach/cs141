@@ -21,7 +21,7 @@ public class Warrior extends GeneralCharacter {
 	 * @param gender Gender of the character.
 	 */
 	public Warrior(String name, String gender) {
-		super(name, gender);
+		super(name, gender, "Warrior");
 		addStrength(10);
 	}
 	

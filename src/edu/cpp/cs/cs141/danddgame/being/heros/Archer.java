@@ -37,7 +37,7 @@ public class Archer extends GeneralCharacter {
 	 * @param gender Gender of the character.
 	 */
 	public Archer(String name, String gender) {
-		super(name, gender);
+		super(name, gender, "Archer");
 		addDexterity(10);
 		
 	}
