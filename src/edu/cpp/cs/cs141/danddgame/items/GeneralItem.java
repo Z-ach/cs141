@@ -26,12 +26,17 @@ public abstract class GeneralItem {
 	
 	/**
 	 * This field represents the name of the {@link GeneralItem}. Will be set by the constructor, which is called by the subclass.
+	 * Cannot be changed once set.
 	 */
 	private String name;
 	
 	/**
 	 * Constructor for the {@link GeneralItem} object. This is the superclass to all items, so all items will inherit all methods and
 	 * fields created here.
+	 * 
+	 * @param consumable whether or not the item is consumable. {@code true} for yes, {@code false} for no
+	 * @param equippable whether or not the item can be equipped. {@code true} for yes, {@code false} for no
+	 * @param name the name of the item, used to identify it in the game
 	 */
 	public GeneralItem(boolean consumable, boolean equippable, String name){
 		this.consumable = consumable;
