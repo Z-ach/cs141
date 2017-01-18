@@ -13,9 +13,9 @@ package edu.cpp.cs.cs141.danddgame.being.heros;
 public class Warrior extends GeneralCharacter {
 
 	/**
-	 * Constructor for the Warrior hero. It assigns a name and gender to the character, and adds additional strength.
-	 * Warriors are very strong and have high health points. They have the lowest mana of any class though.
-	 * 
+	 * The constructor for the {@link Warrior} hero. This constructor initializes a {@link GeneralCharacter} with heroType 
+	 * {@code Warrior}. Warriors use strength to fight enemies, and thus the class initializes the {@link GeneralCharacter} 
+	 * with additional strength.
 	 * 
 	 * @param name Name of the character.
 	 * @param gender Gender of the character.
@@ -26,17 +26,24 @@ public class Warrior extends GeneralCharacter {
 	}
 	
 	/**
-	 * Swings weapon at an enemy. Damage depends on character's strength and the weapon's attack.
+	 * This method is the main attack for the {@link Warrior}. Every time this method is called, it will deal some sort of
+	 * damage to its target.
+	 * 
+	 * @param target the recipient of the {@link Warrior}'s attack.
+	 * @return the amount of damage to deal to the target
 	 */
-	public void powerAttack(){
-		
+	public int powerAttack(){
+		return 0;
 	}
 	
 	/**
-	 * Blocks an incoming attack. 
+	 * This method is the support skill for the {@link Warrior}. Every time this method is called, it will block a certain amount of
+	 * damage from an incoming attack.
+	 * 
+	 * @param amount the amount of damage the shield has absorbed
 	 */
-	public void block(){
-		
+	public int block(){
+		return 0;
 	}
 
 }

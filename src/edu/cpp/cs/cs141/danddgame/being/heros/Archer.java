@@ -10,28 +10,37 @@
  */
 package edu.cpp.cs.cs141.danddgame.being.heros;
 
+import edu.cpp.cs.cs141.danddgame.being.enemies.GeneralEnemy;
+
 public class Archer extends GeneralCharacter {
 
 	
 	/**
-	 * The total number of arrows the quiver is capable of holding.
+	 * This field represents the total number of arrows the quiver is capable of holding. Initially {@code 0}, this field
+	 * can only increase by equipping a new quiver, which has yet to be implemented.
+	 * 
+	 * @see #equip(int)
 	 */
 	private int quiverCapacity;
 	
 	/**
-	 * The amount of arrows the quiver currently is holding. When this number reaches 0, the quiver will need to be reloaded.
+	 * This field represents the amount of arrows the quiver currently is holding. Initially {@code 0}. When this number reaches 
+	 * {@code 0}, the quiver will need to be reloaded.
+	 * 
+	 * @see #reloadQuiver()
 	 */
 	private int quiverCount;
 	
 	/**
-	 * The current number of arrows the character has. This number does not include the arrows in the quiver.
+	 * This field represents the current number of arrows the character has. Initially {@code 0}. This number does not include the 
+	 * arrows in the quiver.
 	 */
 	private int arrowCount;
 	
 	/**
-	 * The constructor for the Archer hero.
-	 * Archers are skilled marksmen who use a bow and arrow to hunt enemies from a ranged distance. 
-	 * Archers primarily use dexterity, and have an average amount of mana and health.
+	 * The constructor for the {@link Archer} hero. This constructor initializes a {@link GeneralCharacter} with heroType 
+	 * {@code Archer}. Archers use dexterity to fight enemies, and thus the class initializes the {@link GeneralCharacter} 
+	 * with additional dexterity.
 	 * 
 	 * @param name Name of the character.
 	 * @param gender Gender of the character.
@@ -43,21 +52,27 @@ public class Archer extends GeneralCharacter {
 	}
 	
 	/**
-	 * Shoots an arrow at an enemy. Damage is dependent on the equipped bow's attack and the character's dexterity.
+	 * This method is the main attack for the {@link Archer}. Every time this method is called, it will deal some sort of
+	 * damage to its target.
+	 * 
+	 * @param target the recipient of the {@link Archer}'s attack.
+	 * @return the amount of damage to deal to the target
 	 */
-	public void shootArrow(){
-		
+	public int shootArrow(GeneralEnemy target){
+		return 0;
 	}
 	
+
 	/**
-	 * Refills the quiver to maximum capacity.
+	 * This method reloads the {@link Archer}'s quiver. It will refill the quiver to the full quiver capacity. If there aren't 
+	 * enough arrows in the {@link Archer}'s inventory, it will refill as many arrows as it can.
 	 */
 	public void reloadQuiver(){
 		
 	}
 	
 	/**
-	 * Gets the current amount of arrows in the quiver.
+	 * This method gets the current amount of arrows in the quiver.
 	 * 
 	 * @return the amount of arrows in the quiver.
 	 */
@@ -66,9 +81,9 @@ public class Archer extends GeneralCharacter {
 	}
 	
 	/**
-	 * Gets the total number of arrows in the character's inventory. This does not include arrows in the quiver.
+	 * This method gets the total number of arrows in the {@link Archer}'s inventory. This does not include arrows in the quiver.
 	 * 
-	 * @return number of arrows in the character's inventory. This does not include arrows in the quiver.
+	 * @return number of arrows in the {@link Archer}'s inventory.
 	 */
 	public int getArrowCount(){
 		return arrowCount;

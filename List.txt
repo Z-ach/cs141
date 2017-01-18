@@ -1,43 +1,61 @@
 Characters:
 
-Mage
 Archer
-Assassin
+Mage
 Warrior
+
+Enemies:
+
+Wolf
+Witch
+Orc
+
+Living Being Attributes:
+
+Accuracy
+Attack Power
+Avoidability
+Defense
+Current Health
+Total Health
+Current Mana
+Total Mana
+Level
+Name
+
+Living Being Behaviors:
+
+Attack
+Take Damage
+Walk
 
 General Character Attributes:
 
-Name
-Health Points (hp)
-Mana Points (mp)
-Level
-Experience
-Gender
+Intelligence
 Strength
 Luck
 Dexterity
-Intelligence
-Avoid
-Defense
-Reputation
-Carry Capacity
+Type of Hero
+Gender
 Gold
+Reputation
+Total Experience
+Current Experience
+Carry Capacity
 
-General Character Behaviors:
+General Character Behaviors
 
-Walk
-Sprint
-Attack
-Consume
-Level up
+Buy Items
+Gain/Lose Reputation
+Gain/Lose Gold
+Gain/Lose Intelligence/Luck/Strength/Dexterity
+Consume an Item
+Drop an Item
+Sell an Item
+Equip an Item
+Level Up
 Sleep
-Buy
-Sell
-Drop
-Equip
-Take Damage
-Gain Reputation
-Lose Reputation
+Sprint
 
 Mage Specific Behaviors: 
 
@@ -59,12 +77,31 @@ Warrior Specific Behaviors:
 Power Attack
 Block
 
+Enemy Specific Attributes:
+
+Experience
+
+Wolf Specific Behaviors:
+
+Bite
+
+Witch Specific Behaviors:
+
+Cast Spell
+
+Orc Specific Behaviors:
+
+Smash
+
+
+------------------------------------------
+---Unimplemented due to time constraint---
+------------------------------------------
+
 General Item Attributes:
 
 Wearable
 Usable
-
-
 
 Weapons:
 
@@ -108,23 +145,3 @@ Luck Potion
 Dexterity Potion
 Attack Potion
 Defense Potion
-
-Enemies:
-
-Wolf
-Orc
-Witch
-
-General Enemy Attributes:
-
-Health
-Mana
-Attack Power
-Defense
-Avoid
-Experience
-
-General Enemy Behaviors
-
-Walk
-Attack 

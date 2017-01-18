@@ -10,11 +10,14 @@
  */
 package edu.cpp.cs.cs141.danddgame.being.heros;
 
+import edu.cpp.cs.cs141.danddgame.being.enemies.GeneralEnemy;
+
 public class Mage extends GeneralCharacter {
 
 	/**
-	 * The constructor for the Mage hero.
-	 * Mages use intelligence to fight enemies, and have lower health than other heros.
+	 * The constructor for the {@link Mage} hero. This constructor initializes a {@link GeneralCharacter} with heroType {@code Mage}.
+	 * Mages use intelligence to fight enemies, and thus the class initializes the {@link GeneralCharacter} with additional
+	 * intelligence.
 	 * 
 	 * @param name Name of the character.
 	 * @param gender Gender of the character.
@@ -24,17 +27,25 @@ public class Mage extends GeneralCharacter {
 		addIntelligence(10);
 	}
 	
+
 	/**
-	 * Casts a fireball at an enemy. Damage is dependent on the equipped weapon's attack and the character's intelligence.
+	 * This method is the main attack for the {@link Mage}. Every time this method is called, it will deal some sort of
+	 * damage to its target.
+	 * 
+	 * @param target the recipient of the {@link Mage}'s attack.
+	 * @return the amount of damage to deal to the target
 	 */
-	public void castFireball(){
-		
+	public int castFireball(GeneralEnemy target){
+		return 0;
 	}
 	
 	/**
-	 * Heals the character by a certain amount, depending on the character's intelligence
+	 * This method is the support skill for the {@link Mage}. Every time this method is called, it will heal a certain amount of
+	 * health to the player.
+	 * 
+	 * @param amount the amount of health to restore to the player
 	 */
-	public void heal(){
+	public void heal(int amount){
 		
 	}
 	
