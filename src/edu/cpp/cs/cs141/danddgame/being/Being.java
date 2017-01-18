@@ -63,7 +63,7 @@ public abstract class Being {
 	 * This field represents the accuracy of the {@link Being}. Initially {@code 0}, can only be changed by
 	 * the method {@link #addAccuracy(int)}. This effects how often the {@link Being} can hit another {@link Being}.
 	 * 
-	 * @see #attack()
+	 * @see Being#attack(GeneralEnemy)
 	 */
 	private int accuracy;
 	

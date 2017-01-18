@@ -90,8 +90,8 @@ public abstract class GeneralCharacter extends Being{
 	
 	/**
 	 * The gender of the {@link GeneralCharacter}. Will be used later on to decide what items the {@link GeneralCharacter} can
-	 * {@link #equip(int)}. This value is set in the constructor by the required arguments of {@link #GeneralCharacter(String, String)}.
-	 * Once it is set, it cannot be changed.
+	 * {@link #equip(int)}. This value is set in the constructor by the required arguments of 
+	 * {@link #GeneralCharacter(String, String, String)}. Once it is set, it cannot be changed.
 	 */
 	private String gender;
 	
@@ -111,6 +111,7 @@ public abstract class GeneralCharacter extends Being{
 	 * 
 	 * @param name Name of the character.
 	 * @param gender Gender of the character.
+	 * @param heroType The type of hero. Currently limited to {@code Mage}, {@code Warrior}, or {@code Archer}.
 	 */
 	protected GeneralCharacter(String name, String gender, String heroType) {
 		super(name);
@@ -164,9 +165,9 @@ public abstract class GeneralCharacter extends Being{
 	
 	
 	/**
-	 * This method 
+	 * This method returns the gender of the {@link GeneralCharacter}. 
 	 * 
-	 * @return
+	 * @return gender of {@link GeneralCharacter}.
 	 */
 	public String getGender(){
 		return gender;

@@ -10,6 +10,8 @@
  */
 package edu.cpp.cs.cs141.danddgame.being.heros;
 
+import edu.cpp.cs.cs141.danddgame.being.enemies.GeneralEnemy;
+
 public class Warrior extends GeneralCharacter {
 
 	/**
@@ -32,7 +34,7 @@ public class Warrior extends GeneralCharacter {
 	 * @param target the recipient of the {@link Warrior}'s attack.
 	 * @return the amount of damage to deal to the target
 	 */
-	public int powerAttack(){
+	public int powerAttack(GeneralEnemy target){
 		return 0;
 	}
 	
@@ -40,9 +42,10 @@ public class Warrior extends GeneralCharacter {
 	 * This method is the support skill for the {@link Warrior}. Every time this method is called, it will block a certain amount of
 	 * damage from an incoming attack.
 	 * 
-	 * @param amount the amount of damage the shield has absorbed
+	 * @param fullDamage the damage that would be applied before the block
+	 * @return the amount of damage the shield has absorbed
 	 */
-	public int block(){
+	public int block(int fullDamage){
 		return 0;
 	}
 
