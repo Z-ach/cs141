@@ -12,6 +12,14 @@ package edu.cpp.cs.cs141.danddgame.being.enemies;
 
 import edu.cpp.cs.cs141.danddgame.being.Being;
 
+/**
+ * This is the superclass for all enemies. All enemies have certain attributes and behaviors, so it only makes
+ * sense to centralize them. Since all enemies are living, this class inherits from the Being class. All enemies 
+ * have a set amount of experience they give when killed, and all enemies need to be able to discern whether or 
+ * not they are alive.
+ * 
+ * @author Zach Kaufman
+ */
 public abstract class GeneralEnemy extends Being{
 
 	

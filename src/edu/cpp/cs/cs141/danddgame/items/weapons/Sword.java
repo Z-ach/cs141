@@ -10,6 +10,12 @@
  */
 package edu.cpp.cs.cs141.danddgame.items.weapons;
 
+/**
+ * The sword is a weapon, and inherits from GeneralWeapon because of that. Unique to the sword are the 
+ * amount of weapon attack, and weight of the sword.
+ * 
+ * @author Zach Kaufman
+ */
 public class Sword extends GeneralWeapon {
 
 	

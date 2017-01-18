@@ -10,6 +10,12 @@
  */
 package edu.cpp.cs.cs141.danddgame.items.weapons;
 
+/**
+ * A staff is a weapon, and must inherit attributes and behaviors shared among other weapons. Unique to the 
+ * staff is the amount of weapon attack, and the weight.
+ * 
+ * @author Zach Kaufman
+ */
 public class Staff extends GeneralWeapon {
 
 	

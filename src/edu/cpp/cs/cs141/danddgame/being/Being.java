@@ -13,6 +13,15 @@ package edu.cpp.cs.cs141.danddgame.being;
 
 import edu.cpp.cs.cs141.danddgame.being.enemies.GeneralEnemy;
 
+/**
+ * This class is the superclass of all living things, and as such contains the attributes and behaviors
+ * of all living things. All beings have health, mana, a level, various stats, and a name. Furthermore, all
+ * beings can attack, walk, and take damage. This class has getters and setters because the fields are all
+ * private, and without them nothing would be accessable. That being said, it wasn't necessary for this
+ * assignment.
+ * 
+ * @author Zach Kaufman
+ */
 public abstract class Being {
 
 	/**

@@ -12,6 +12,14 @@ package edu.cpp.cs.cs141.danddgame.items.weapons;
 
 import edu.cpp.cs.cs141.danddgame.items.GeneralItem;
 
+/**
+ * This class represents the generalized form of a weapon. All weapons have similar attributes and behaviors, which are represented within 
+ * this class. All weapons have a set amount of weapon attack they provide, a certain amount of weight, a durability, and either work or don't
+ * work. Additionally, all weapons can be repaired, and all weapons can take wear. All weapons can also break, at which point they will need
+ * to be repaired.
+ * 
+ * @author Zach Kaufman
+ */
 public abstract class GeneralWeapon extends GeneralItem {
 	
 	/**

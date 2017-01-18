@@ -12,6 +12,13 @@ package edu.cpp.cs.cs141.danddgame.being.enemies;
 
 import edu.cpp.cs.cs141.danddgame.being.heros.GeneralCharacter;
 
+/**
+ * The wolf is an enemy, and must inherit all traits and behaviors shared amongst other enemies. The wolf has a set
+ * amount of experience given when slain, and this class reflects that. The wolf also has a unique behavior, bite, 
+ * which is a method within this class.
+ * 
+ * @author Zach Kaufman
+ */
 public class Wolf extends GeneralEnemy {
 	
 	/**

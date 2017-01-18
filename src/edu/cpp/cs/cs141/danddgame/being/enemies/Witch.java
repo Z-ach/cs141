@@ -12,6 +12,13 @@ package edu.cpp.cs.cs141.danddgame.being.enemies;
 
 import edu.cpp.cs.cs141.danddgame.being.heros.GeneralCharacter;
 
+/**
+ * The witch is an enemy, and thus must inherit all traits and behaviors that are shared between enemies. The witch
+ * has her own set amount of experience that is given out when she is slain, which is unique to the witch. Also unique
+ * to the witch is her ability to cast a spell, which is a method found within this class.
+ * 
+ * @author Zach Kaufman
+ */
 public class Witch extends GeneralEnemy {
 
 	/**

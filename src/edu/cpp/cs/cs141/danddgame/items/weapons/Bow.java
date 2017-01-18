@@ -10,6 +10,12 @@
  */
 package edu.cpp.cs.cs141.danddgame.items.weapons;
 
+/**
+ * A bow is a type of weapon, and as such inherits attributes and behaviors from the GeneralWeapon class. Unique to the bow
+ * are two fields, which are the amount of weapon attack a bow provides and how heavy a bow is.
+ * 
+ * @author Zach Kaufman
+ */
 public class Bow extends GeneralWeapon {
 
 	

@@ -12,6 +12,12 @@ package edu.cpp.cs.cs141.danddgame.items.potions;
 
 import edu.cpp.cs.cs141.danddgame.items.GeneralItem;
 
+/**
+ * The potion class is a representation of all potions within the game. All potions can restore, and all potions have a type of 
+ * stat that they restore. As such, all attributes that are common to potions appear here.
+ * 
+ * @author Zach Kaufman
+ */
 public abstract class Potion extends GeneralItem {
 
 	/**

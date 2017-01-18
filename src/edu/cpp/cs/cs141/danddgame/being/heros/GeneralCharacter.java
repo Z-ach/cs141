@@ -12,6 +12,14 @@ package edu.cpp.cs.cs141.danddgame.being.heros;
 
 import edu.cpp.cs.cs141.danddgame.being.Being;
 
+/**
+ * This class is the representation of all potential characters that the player can play. All characters contain a set amount of
+ * experience, a level, strength, intelligence, luck, dexterity, and other stats that influence how the game is played. Furthermore, 
+ * all characters have certain behaviors such as consuming potions, equipping weapons, sprinting, sleeping, dropping items, selling items,
+ * buying items, etc. All of those features are held within this class, and can be utilized by whatever class inherits this one.
+ * 
+ * @author Zach Kaufman
+ */
 public abstract class GeneralCharacter extends Being{
 	
 

@@ -10,6 +10,13 @@
  */
 package edu.cpp.cs.cs141.danddgame.items;
 
+/**
+ * This class represents the general items within the game. Any item is bound to have similar traits between them, and as such 
+ * they are here in a centralized form. The items don't have behaviors because they're inanimate objects, but they have fields
+ * that can be shared between them.
+ * 
+ * @author Zach Kaufman
+ */
 public abstract class GeneralItem {
 	
 	/**

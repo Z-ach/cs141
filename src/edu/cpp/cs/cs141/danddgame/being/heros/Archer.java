@@ -12,6 +12,13 @@ package edu.cpp.cs.cs141.danddgame.being.heros;
 
 import edu.cpp.cs.cs141.danddgame.being.enemies.GeneralEnemy;
 
+/**
+ * The Archer is a hero character that the player can play. Since it is a character, it inherits methods and fields from 
+ * the GeneralCharacter class. Unique to archer are the attributes associated with quivers and arrows. The archer also has
+ * unique behaviors such as reload and shoot arrows.
+ * 
+ * @author Zach Kaufman
+ */
 public class Archer extends GeneralCharacter {
 
 	

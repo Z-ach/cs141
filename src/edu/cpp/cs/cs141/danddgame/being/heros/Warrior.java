@@ -12,6 +12,12 @@ package edu.cpp.cs.cs141.danddgame.being.heros;
 
 import edu.cpp.cs.cs141.danddgame.being.enemies.GeneralEnemy;
 
+/**
+ * The Warrior character inherits attributes and behaviors shared between other characters. The warrior character has two
+ * unique abilities, which are blocking incoming attacks and power swinging their sword.
+ * 
+ * @author Zach Kaufman
+ */
 public class Warrior extends GeneralCharacter {
 
 	/**

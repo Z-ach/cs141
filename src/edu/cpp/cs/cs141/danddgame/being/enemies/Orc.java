@@ -12,6 +12,14 @@ package edu.cpp.cs.cs141.danddgame.being.enemies;
 
 import edu.cpp.cs.cs141.danddgame.being.heros.GeneralCharacter;
 
+/**
+ * The orc is an enemy, so it must have certain attributes and behaviors similar to other enemies. For that reason,
+ * it inherits the GeneralEnemy class, which provide it with attributes and behaviors that all enemies share. The orc
+ * has a set amount of experience, so it must be declared here. Also, orcs have the ability to smash, which is a behavior
+ * unique to them.
+ * 
+ * @author Zach Kaufman
+ */
 public class Orc extends GeneralEnemy {
 
 	/**

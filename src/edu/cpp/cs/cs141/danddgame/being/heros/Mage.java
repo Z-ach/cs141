@@ -12,6 +12,12 @@ package edu.cpp.cs.cs141.danddgame.being.heros;
 
 import edu.cpp.cs.cs141.danddgame.being.enemies.GeneralEnemy;
 
+/**
+ * The Mage is a character that can be played, and as such inherits other traits and behaviors from the GeneralCharacter class.
+ * Mages have two unique behaviors to them, which are casting fireballs and healing themselves with magic.
+ * 
+ * @author Zach Kaufman
+ */
 public class Mage extends GeneralCharacter {
 
 	/**
